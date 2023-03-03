@@ -1,38 +1,278 @@
+body {
+  background-color: #f4fff8;
+  height: 100vh;
+  font-family: 'Public Sans', sans-serif;
+  font-size: x-large;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#login {
+  background-color: #f4fff8;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.login-container {
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-shadow: #0e2627 0px 20px 30px -10px;
+  height: 50%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+form {
+  padding: 5% 10% 10% 10%;
+}
+
+input {
+  border: 2px solid black;
+  border-radius: 6px;
+  height: 2rem;
+  width: 50%;
+  margin: 2.5%;
+}
+
+.exit {
+  color: #1c3738;
+  position: relative;
+  left: 45%;
+  top: 5%;
+  transform: scale(1.5);
+}
+
+#button-group {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+
+.login-button {
+  background-color: #1c3738;
   color: white;
+  border: black solid 2px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  margin: 8% 0;
+  padding: 2% 12%;
+  font-family: 'Public Sans', sans-serif;
+  font-size: large;
+  transition: .2s;
+  width: 40%;
 }
 
-.App-link {
-  color: #61dafb;
+.login-button:hover {
+  box-shadow: rgba(142, 142, 172, 0.25) 0px 30px 60px -12px inset, rgba(133, 131, 131, 0.3) 0px 18px 36px -18px inset;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-button:active {
+  box-shadow: rgba(142, 142, 172, 0.25) 0px 30px 60px -12px inset, rgba(133, 131, 131, 0.3) 0px 18px 36px -18px inset;
+  transform: translateY(2px);
+}
+
+/* Navigation Bar */
+
+.navigation {
+  background-color: #1c3738;
+  border-bottom: #1c3738 solid 4px;
+  box-shadow: #0e2627 0px 10px 10px -10px;
+  padding: 4%;
+  box-sizing: border-box;
+  height: 140px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.options {
+  border: #dcdcdd solid 2px;
+  border-radius: 4px;
+  color: #dcdcdd;
+  transform: scale(1.5);
+  margin-left: 20%;
+}
+
+.options:hover {
+  cursor: pointer;
+}
+
+.display-name {
+  color: #dcdcdd;
+  margin-left: 5%;
+}
+
+#expanded-menu {
+  color: #dcdcdd;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5%;
+}
+
+.nav-button {
+  border: black solid 2px;
+  border-radius: 6px;
+  margin-left: 5%;
+  background-color: #dcdcdd;
+  padding:15px 20px;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+  box-shadow: rgba(118, 118, 118, 0.25) 0px 30px 60px -12px inset, rgba(101, 100, 100, 0.3) 0px 18px 36px -18px inset;
+}
+
+.nav-button:active {
+  transform: translateY(1px);
+}
+
+/* Page View */
+
+#page-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* Game Modes */
+
+.game-modes {
+  background-color: whitesmoke;
+  border:#0e2627 solid 2px;
+  border-radius: 6px;
+  box-shadow: #0e2627 0px 20px 30px -10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  width: 20%;
+  margin: 5%;
+}
+
+.game-modes button {
+  height: 20%;
+  width: 50%;
+  margin: 10% 0;
+  border: black solid 2px;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  font-family: 'Public Sans', sans-serif;
+  font-size: large;
+}
+
+.selected {
+  background-color: #8baaad;
+}
+
+/* Main Game */
+
+.main-container {
+  margin: 5% auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-shadow: #0e2627 0px 20px 30px -10px;
+  height: 60vh;
+  width: 40%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -15%;
+}
+
+#main-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+
+.timer {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 30%;
+}
+
+.counter {
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 30%;
+  margin: 5% 0;
+  padding: 2%;
+}
+
+.button-container {
+  width: 40%;
+}
+
+.clicker {
+  background-color: #1c3738;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+  border: black solid 2px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
+  font-size: large;
+  margin: 5% 0;
+  padding: 15% 40%;
+}
+
+.clicker:hover {
+  box-shadow: rgba(142, 142, 172, 0.25) 0px 30px 60px -12px inset, rgba(133, 131, 131, 0.3) 0px 18px 36px -18px inset;
+  cursor: pointer;
+}
+
+.clicker:active {
+  box-shadow: rgba(142, 142, 172, 0.25) 0px 30px 60px -12px inset, rgba(133, 131, 131, 0.3) 0px 18px 36px -18px inset;
+  transform: translateY(2px);
+}
+
+/* Ad Space */
+
+.ad-space {
+  background-color: whitesmoke;
+  border:#0e2627 solid 2px;
+  border-radius: 6px;
+  box-shadow: #0e2627 0px 20px 30px -10px;
+  height: inherit;
+  width: 20%;
+  margin: 5%;
+  padding: 12% 0 0 0;
 }
